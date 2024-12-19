@@ -1,0 +1,171 @@
+$green: #4E9F0D;
+$white: #ffffff;
+$grey: #7A7A7A;
+$black: #000000;
+$hover: #4E9F0D80;
+
+@mixin for-p{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.13px;
+    
+}
+@mixin for-h2{
+    font-size: 36px;
+    font-weight: 700;
+    // line-height: 42.26px;
+    color: $green;
+    text-transform: uppercase;
+}
+@mixin for-a{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.13px;
+}
+@mixin for-hover{
+    background-color: $hover;
+    transition: 0.5s;
+    cursor: pointer;
+}
+header{
+    width: 100%;
+    min-height: auto;
+    background-image: url(./image/header-back.png);
+    background-size: cover;
+    background-position: center;
+    .header-nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 90px;
+    }
+
+    .header-menu{
+        display: none;
+    }
+    
+    .logo{
+        h2{
+            width: 160px;
+            min-height: 30px;
+            border-radius: 3px;
+            background-color: $green;
+            color: $white;
+            font-family: Raleway;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 23.48px;
+            align-content: center;
+            text-align: center;
+            &:hover{
+                @include for-hover;
+            }
+        }
+    }
+
+    ul{
+        display: flex;
+            li{
+            @include for-a;
+            color: $green;
+            padding: 0 5px;
+            min-height: 90px;
+            align-content: center;
+            margin-left: 40px;
+            span{
+                height: 20px;
+                width: 22px;
+                border-radius: 50%;
+                padding: 0 5px;
+                margin-left: 7px;
+                background-color: $green;
+                color: $white;
+            }
+            &:hover{
+            background-color: $green;
+            color: $white
+            } 
+            &:hover span{
+                background-color: $white;
+                color: $green;
+            }
+        }
+        
+    }
+    .header-hero{
+        h1{
+            font-family: Raleway;
+            font-size: 72px;
+            font-weight: 900;
+            line-height: 84.53px;
+            color: $green;
+            text-transform: uppercase;
+            margin-top: 150px;
+        }
+        h2{
+            @include for-h2;
+            color: $green;
+        }
+        p{
+            @include for-p;
+            color: $white;
+            max-width: 1169px;
+        }
+        button{
+            width: 350px;
+            height: 100px;
+            background-color: $green;
+            color: $white;
+            border: none;
+            font-size: 60px;
+            font-weight: 100;
+            margin-top: 69px;
+            margin-bottom: 135px;
+            &:hover{
+                @include for-hover;
+            }
+        }
+    }
+}
+@media screen and  (max-width: 768px){
+    header{
+        nav{
+            display: none;
+        }
+        .header-menu{
+            display: flex;
+            color: $green;
+            font-size: 50px;
+            &:hover{
+                color: $hover;
+                transition: 0.5s;
+                cursor: pointer;
+            }
+        }
+    }
+    
+}
+@media screen and  (max-width: 468px){
+    header{
+        .header-hero{
+            text-align: center;
+            h1{
+                font-size: 45px;
+            }
+            h2{
+                font-size: 32px
+            }
+            p{
+                @include for-p;
+                color: $white;
+                max-width: 1169px;
+            }
+            button{
+                width: 250px;
+                height: 100px;
+                font-size: 40px;
+            }
+        }
+    }
+    
+}
